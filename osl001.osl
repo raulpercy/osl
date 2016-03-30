@@ -1,0 +1,11 @@
+shader r4ul
+(
+	color color1 = color(1,0,0),
+	output color Color_de_Salida= color(0.6),
+    output closure color MyBSDF = diffuse (N)
+)
+{
+    Color_de_Salida = color1;
+    normal Nn = normalize(N);
+    MyBSDF = Color_de_Salida * diffuse(Nn);
+}
